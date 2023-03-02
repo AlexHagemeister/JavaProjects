@@ -1,0 +1,41 @@
+@startuml Savings Account
+
+title: Savings Account and Special Savings Account: Class Diagram \n Alex Hagemeister
+
+class SavingsAccount {
+    - static float annualInterestRate
+    - float savingsBalance
+    + SavingsAccount()
+    + SavingsAccount(float)
+    # calculateMonthlyInterest()
+    # modifyInterestRate(float)
+    # static modifyInterestRate(float)
+    # static getInterestRate()
+    # setSavingsBalance(float)
+    # getSavingsBalance()
+    # deopsit(float)
+    # withdraw(float)
+    # printAccountInfo()
+}
+
+class SpecialSavings extends SavingsAccount {
+
+    - float specialInterestRate
+    - specialRateThreshold
+    + SpecialSavings()
+    + SpecialSavings(float, float, float)
+    # @ov getInterestRate()
+    # modifySpecialRatethreshold(float)
+    # getSpecialRateThreshold(): float
+    # modifySpecialInterestRate(float)
+    # getSpecialInterestRate(): float
+    # @ov printAccountInfo()
+}
+class AccountTestDriver {
+    + main()
+}
+AccountTestDriver -left- SavingsAccount
+AccountTestDriver -left- SpecialSavings
+
+
+@enduml

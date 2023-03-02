@@ -1,0 +1,20 @@
+Sample Output:
+
+Enter Loan amount: 10000
+Enter Interest Rate: 7
+Enter duration of loan in years: 1
+Monthly payment: 865.26
+Total payment: 10383.12
+Payment #        Interest       Principal         Balance
+    1           58.33          806.93         9193.07
+    2           53.63          811.63         8381.44
+    3           48.89          816.37         7565.07
+    4           44.13          821.13         6743.94
+    5           39.34          825.92         5918.02
+    6           34.52          830.74         5087.28
+    7           29.68          835.58         4251.70
+    8           24.80          840.46         3411.24
+    9           19.90          845.36         2565.88
+   10           14.97          850.29         1715.59
+   11           10.01          855.25          860.34
+   12            5.02          860.24            0.09

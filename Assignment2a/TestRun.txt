@@ -1,0 +1,35 @@
+Name: Alex Hagemeister
+Course.Section: CIS D035A.63Z
+Assignment 2a: Personal Information Class
+Due: Mon, 6 Feb 2023 23:59
+submitted: 02/04/2023
+
+
+Test run output:
+
+	Enter name: Abraham Lincoln
+	Enter address: 1234 Government street
+	Enter age: 55
+	Enter phone number: 123-1234
+	Name: Abraham Lincoln
+	Address: 1234 Government street
+	Age: 55
+	Phone No.: 123-1234
+	
+	Enter name: Captain Jack Sparrow
+	Enter address: 34 Scalywag Ave
+	Enter age: 33
+	Enter phone number: 555-loot
+	Name: Captain Jack Sparrow
+	Address: 34 Scalywag Ave
+	Age: 33
+	Phone No.: 555-loot
+	
+	Enter name: Elon Musk
+	Enter address: Mars Colony 1
+	Enter age: 51
+	Enter phone number: 999-9991
+	Name: Elon Musk
+	Address: Mars Colony 1
+	Age: 51
+	Phone No.: 999-9991

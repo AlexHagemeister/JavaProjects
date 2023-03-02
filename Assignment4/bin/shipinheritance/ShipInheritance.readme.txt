@@ -1,0 +1,148 @@
+Alex Hagemeister
+Lab 4 Exercise 2: Ship Inheritance
+CIS 35A
+Due date: 02-27-2023
+Date submitted: 02-26-2023
+
+** Ship Inheritance: Program Design and Output **
+
+This package contains the Ship class, and it's two subclasses, CargoShip and CruiseShip.
+A ShipDriver class is also provided to test the classes by populating an mixed array of 
+Ship objects, and demonstrates the polymorphic behavior of the classes.
+
+
+Ship class:
+
+    Description:
+        Parent class with properties common to all ships, which will be inherited by subclasses
+
+    Variables:
+        - floating (boolean): whether the ship is floating or not
+        - capacity (int): the capacity of the ship
+        - length (int): the length of the ship
+        - width (int): the width of the ship
+        - name (String): the name of the ship
+        - height (int): the height of the ship
+        - origin (String): the origin of the ship
+        - departureDate (String): the departure date of the ship
+        - arrivalDate (String): the arrival date of the ship
+        - departingPort (String): the departing port of the ship
+        - arrivalPort (String): the arrival port of the ship
+        - owner (String): the owner of the ship
+      
+    Processing: 
+        - Ship(): default constructor
+        - Ship(args): Initialization constructor
+        - Setters and Getters for all variables
+        - print(): prints the ship's information
+
+    Printing:
+        - print(): prints the ship's information using System.out.printf()
+
+CargoShip class:
+
+    Description:
+        Subclass extends Ship with properties specific to cargo ships
+
+    Variables:
+        - cargoType (String): the type of cargo the ship is carrying
+        - loadingMethod (String): the method of loading cargo
+        - numberOfCranes (int): the number of cranes on the ship
+        - contraband (boolean): whether the ship is carrying contraband or not
+        - cargoValue (float): the value of the cargo
+      
+    Processing: 
+        - CargoShip(): overloaded default constructor
+        - CargoShip(args): overloaded initialization constructor
+        - Setters and Getters for all variables
+        - print(): overloaded to print the cargo ship's additional information, then calls Ship's print()
+
+    Printing:
+        - print(): overloaded to print the cargo ship's additional information, then calls Ship's print()
+
+CruiseShip class:
+
+    Description:
+        Subclass extends Ship with properties specific to cruise ships
+
+    Variables:
+        - ticketPrice (float): the price of a ticket on the ship
+        - numberOfRooms (int): the number of rooms on the ship
+        - buffetMenu (String): the buffet menu on the ship
+        - services[] (String[]): the services offered on the ship
+        - cruiseType (String): the type of cruise the ship
+      
+    Processing: 
+        - CruiseShip(): overloaded default constructor
+        - CruiseShip(args): overloaded initialization constructor
+        - Setters and Getters for all variables
+        - print(): overloaded to print the cruise ship's additional information, then calls Ship's print()
+
+    Printing:
+        - print(): overloaded to print the cruise ship's additional information, then calls Ship's print()
+
+ShipTestDriver class:
+
+    Description:
+        Driver class to test the Ship, CargoShip, and CruiseShip classes. 
+        Populates an array with a combination of Ship, CargoShip, and CruiseShip objects. 
+        Demonstrates polymorphic behavior of the classes by calling print() on each object in the array.
+
+    Variables:
+        - NUM_SHIPS (static final int): the number ships to create
+        - shipArray (Ship[]): the array of Ship objects to populate
+
+    Processing:
+        - main(): populates ship properties
+        - calls print() on each object in the array
+
+    Printing:
+        - print(): calls print() on each object to demonstrate polymorphic behavior
+
+** Program Output **
+
+Name: Shippy Ship 
+Origin: Shiptopia 
+Floating: true 
+Capacity: 100 tons 
+Length: 50 feet 
+Width: 30 feet 
+Height: 20 feet 
+Departure date: 01-01-2020 
+Arrival date: 01-02-2020 
+
+Name: Cruisy Cruise 
+Origin: Cruisytown 
+Floating: true 
+Capacity: 1000 tons 
+Length: 300 feet 
+Width: 101 feet 
+Height: 50 feet 
+Departure date: 01-01-2022 
+Arrival date: 01-22-2022 
+Ticket price: $1000.00 
+Number of rooms: 100 
+Buffet menu: Ham sandwich, Boiled cabbage, Ambrosia, AYCE candy corn 
+Cruise type: Luxury 
+Services: 
+        Massage 
+        Spa 
+        Haircut 
+        Shave 
+        Manicure 
+        Pedicure 
+
+Name: Cargo Cargo 
+Origin: Cargotown 
+Floating: true 
+Capacity: 10000 tons 
+Length: 500 feet 
+Width: 200 feet 
+Height: 100 feet 
+Departure date: 01-01-2023 
+Arrival date: 01-02-2023 
+Cargo type: Dry 
+Loading method: Crane 
+Number of cranes: 2 
+Contraband: true 
+Cargo value: $121212.00 

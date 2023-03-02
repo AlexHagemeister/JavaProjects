@@ -1,0 +1,20 @@
+File: Pt2_testrun.txt
+Name: Alex Hagemeister
+Course.Section: CIS D035A.63Z
+Assignment: 1 (Part 2)
+Due: Wed, 25 Jan 2023
+Submitted: Wed, 25 Jan 2023
+
+
+test output:
+
+Enter a value: 100
+The square root of 100 is 10.00
+
+Enter a value: 49
+The square root of 49 is 7.00
+
+Enter a value: -10
+Cannot be negative. Try again
+Enter a value: 10
+The square root of 10 is 3.16

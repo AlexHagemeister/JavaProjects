@@ -1,0 +1,62 @@
+Name: Alex Hagemeister
+Course.Section: CIS D035A.63Z
+Assignment: -1 (Part 1)
+Due: 01/18/2023
+Submitted: 01/16/2023
+
+** Output From Set 1 -> 2 1 4 1 2 **
+
+	How many TVs were sold? 2
+	How many VCRs were sold? 1
+	How many remote controllers were sold? 4
+	How many cd players were sold? 1
+	How many tape recorders were sold? 2
+	
+	  QTY          DESCRIPTION      UNIT PRICE     TOTAL PRICE
+	    2                   TV          400.00          800.00
+	    1                  VCR          220.00          220.00
+	    4    Remote Controller           35.20          140.80
+	    1            CD Player          300.00          300.00
+	    2        Tape Recorder          150.00          300.00
+	
+	                                 Subtotal:         1760.80
+	                                      Tax:          145.27
+	                                    Total:         1906.07
+	                                    
+** Output From Set 2 -> 3 0 2 0 21 **
+
+	  QTY          DESCRIPTION      UNIT PRICE     TOTAL PRICE
+	    3                   TV          400.00         1200.00
+	    0                  VCR          220.00            0.00
+	    2    Remote Controller           35.20           70.40
+	    0            CD Player          300.00            0.00
+	   21        Tape Recorder          150.00         3150.00
+	
+	                                 Subtotal:         4420.40
+	                                      Tax:          364.68
+	                                    Total:         4785.08	                              
+	                                    
+** TESTING INVALID INPUTS **
+
+	How many TVs were sold? 1.1
+	Invalid input. Please enter a number.
+	How many TVs were sold? five
+	Invalid input. Please enter a number.
+	How many TVs were sold? !!
+	Invalid input. Please enter a number.
+	How many TVs were sold? 1
+	How many VCRs were sold? 2
+	How many remote controllers were sold? 3
+	How many cd players were sold? 4
+	How many tape recorders were sold? 5
+	
+	  QTY          DESCRIPTION      UNIT PRICE     TOTAL PRICE
+	    1                   TV          400.00          400.00
+	    2                  VCR          220.00          440.00
+	    3    Remote Controller           35.20          105.60
+	    4            CD Player          300.00         1200.00
+	    5        Tape Recorder          150.00          750.00
+	
+	                                 Subtotal:         2895.60
+	                                      Tax:          238.89
+	                                    Total:         3134.49	                                    

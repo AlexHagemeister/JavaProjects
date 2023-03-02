@@ -1,0 +1,94 @@
+@startuml
+
+title: Ships Class Diagram \n Alex Hagemeister
+
+
+class Ship {
+    - String name          
+    - boolean floating   
+    - int capacity        
+    - int length          
+    - int width           
+    - int height           
+    - String origin        
+    - String departureDate
+    - String arrivalDate 
+    - String owner
+    + Ship() 
+    + setName(String name)
+    + getName() : String
+    + setFloating(boolean floating)
+    + getFloating() : boolean
+    + setCapacity(int capacity)
+    + getCapacity() : int
+    + setLength(int length)
+    + getLength() : int
+    + setWidth(int width)
+    + getWidth() : int
+    + setHeight(int height)
+    + getHeight() : int
+    + setOrigin(String origin)
+    + getOrigin() : String
+    + setDepartureDate(String departureDate)
+    + getDepartureDate() : String
+    + setArrivalDate(String arrivalDate)
+    + getArrivalDate() : String
+    + setOwner(String owner)
+    + getOwner() : String
+
+}
+
+class CargoShip {
+    - String cargoType;       
+    - String loadingMethod;   
+    - int numberOfCranes;     
+    - boolean contraband;     
+    - float cargoValue;  
+    + setCargoType(String cargoType)
+    + getCargoType() : String
+    + setLoadingMethod(String loadingMethod)
+    + getLoadingMethod() : String
+    + setNumberOfCranes(int numberOfCranes)
+    + getNumberOfCranes() : int
+    + setContraband(boolean contraband)
+    + getContraband() : boolean
+    + setCargoValue(float cargoValue)
+    + getCargoValue() : float
+    + print() : void
+}
+
+class CruiseShip {
+
+    - float ticketPrice;
+    - int numberOfRooms;
+    - String buffetMenu;
+    - String[] services;
+    - String cruiseType;
+    + setTicketPrice(float ticketPrice)
+    + getTicketPrice() : float
+    + setNumberOfRooms(int numberOfRooms)
+    + getNumberOfRooms() : int
+    + setBuffetMenu(String buffetMenu)
+    + getBuffetMenu() : String
+    + setServices(String[] services)
+    + getServices() : String[]
+    + setCruiseType(String cruiseType)
+    + getCruiseType() : String
+}
+
+class ShipTestDriver {
+    final int NUM_SHIPS
+    Ship[] ships
+    Ship ship
+    CruiseShip cruiseShip
+    CargoShip cargoShip
+    + main(String[] args) : void
+}
+
+CargoShip -right-|> Ship : inheritance
+CruiseShip -left-|> Ship : inheritance
+ShipTestDriver -up- Ship : uses
+ShipTestDriver -up- CargoShip : uses
+ShipTestDriver -up- CruiseShip : uses
+
+@enduml

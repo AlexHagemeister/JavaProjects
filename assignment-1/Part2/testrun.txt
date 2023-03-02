@@ -1,0 +1,46 @@
+Name: Alex Hagemeister
+Course.Section: CIS D035A.63Z
+Assignment: -1 (Part 2)
+Due: 01/18/2023
+Submitted: 01/17/2023
+
+
+** Test 1 **
+
+Enter temperature in ˚C to convert to ˚F: 0
+0.00˚C is equal to 32.0˚F
+
+Enter temperature in ˚F to convert to ˚C: 32
+32.0˚F is equal to 0.00˚C
+
+** Test 2 **
+
+Enter temperature in ˚C to convert to ˚F: 100
+100˚C is equal to 212˚F
+
+Enter temperature in ˚F to convert to ˚C: 72
+72.0˚F is equal to 22.2˚C
+
+** Test 3 **
+
+Enter temperature in ˚C to convert to ˚F: -42
+-42.0˚C is equal to -43.6˚F
+
+Enter temperature in ˚F to convert to ˚C: -10
+-10.0˚F is equal to -23.3˚C
+
+** Test 4: INVALID INPUT **
+
+Enter temperature in ˚C to convert to ˚F: forty two
+Invalid input. Please try again.
+Enter temperature in ˚C to convert to ˚F: fifteen
+Invalid input. Please try again.
+Enter temperature in ˚C to convert to ˚F: 42
+42.0˚C is equal to 108˚F
+
+Enter temperature in ˚F to convert to ˚C: forty two
+Invalid input. Please try again.
+Enter temperature in ˚F to convert to ˚C: twelve
+Invalid input. Please try again.
+Enter temperature in ˚F to convert to ˚C: 12
+12.0˚F is equal to -11.1˚C

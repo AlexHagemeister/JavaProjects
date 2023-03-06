@@ -1,0 +1,63 @@
+@startuml 
+
+title Student Score Statistics Class diagram
+
+class Statistics {
+    - lowScores: int[]
+    - highScores: int[]
+    - avgScores: int[]
+    + Statistics() 
+    + Statistics(Student[])
+    + findLow(Student[])
+    + findHigh(Student[])
+    + findAvg(Student[])
+    + getLowScores(): int[]
+    + setLowScores(int[]): void
+    + getHighScores(): int[]
+    + setHighScores(int[]): void
+    + getAvgScores(): int[]
+    + setAvgScores(int[]): void
+    + printSelected(int): void
+    + printHighScores(): void
+    + printLowScores(): void
+    + printAvgScores(): void
+    + printAllStats(): void
+}
+
+class Student {
+    - SID: int
+    - scores: int[]
+    + Student()
+    + Student(int, int[])
+    + getNumScores(): int
+    + getScore(int index): int
+    + getSID(): int
+    + setSID(int): void
+    + getScores(): int[]
+    + setScores(int[]): void
+    + print(): void
+}
+class Util {
+    - fileName: String
+    - numStudents: int
+    + Util()
+    + readFile(String, Student[])
+    + getNumStudents(): int
+    + setNumStudents(int): void
+    + getFileName(): String
+    + setFileName(String): void
+    + print(): void
+}
+class ScoreStatisticsDriver {
+    + main(String[])
+    + printMenu(): void
+    + getUserSelection(int validMin, int validMax): int
+}
+
+Util -- Student: Dependency
+Statistics -- Student: Dependency
+Statistics -right- Util: Dependency
+ScoreStatisticsDriver -- Statistics: Dependency
+ScoreStatisticsDriver -- Util: Dependency
+ScoreStatisticsDriver -- Student: Dependency
+@enduml

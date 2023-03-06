@@ -26,15 +26,14 @@ Program specs:
             - scores[] (private int[]) array of quiz scores
             
         Methods:
-            - Student() (public): default constructor
-            - Student(int, int[]) (public): overloaded constructor
-            - setSID(int) (public): sets SID
-            - getSID() (public int): returns SID
-            - setScores(int[]) (public): sets scores[]
-            - getScores() (public int[]): returns scores[]
-            - print() (public): prints SID and scores[]
+            - Student(): public default constructor
+            - Student(int, int[]): public overloaded constructor
+            - setSID(int): sets SID
+            - getNumScores(): returns number of scores
+            - Setters/Getters for instance variables
+            - print(): prints instance variables
 
-    Statistics class: 
+    Statistics class: Used to store the lowest, highest, and average scores for all quizzes
 
         Variables:
             - lowScores[] (private int[]): array of lowest scores
@@ -42,71 +41,93 @@ Program specs:
             - avgScores[] (private float[]): array of average scores
 
         Methods:
-            - Statistics() (public): default constructor
-            - Statistics(int[], int[], float[]) (public): overloaded constructor
+            - Statistics(): public default constructor
+            - Statistics(Student[]): public overloaded constructor
             - findLow(Student[]) (public): finds lowest scores
             - findHigh(Student[]) (public): finds highest scores
             - findAvg(Student[]) (public): finds average scores
-            - setLowScores(int[]) (public): sets lowScores[]
-            - getLowScores() (public int[]): returns lowScores[]
-            - setHighScores(int[]) (public): sets highScores[]
-            - getHighScores() (public int[]): returns highScores[]
-            - setAvgScores(float[]) (public): sets avgScores[]
-            - getAvgScores() (public float[]): returns avgScores[]
-            - print(int option) (public): prints lowScores[], highScores[], avgScores[], or all based on selection
-            - print() (public): prints All - lowScores[], highScores[], avgScores[]
+            - Setters/Getters for instance variables
+            - printSelected(int): prints based on user selection
+            - printHighScores(): prints highScores[]
+            - printLowScores(): prints lowScores[]
+            - printAvgScores(): prints avgScores[]
+            - printAllStats(): prints all instance variables- highScores[], lowScores[], avgScores[]
 
-
-    Util class:
+    Util class: Used to read file and populate array of Student objects
 
         Variables:
-            - fName (private String): file name
-            - FileReader object
-            - students[] (private Student[]): array of Student objects
-            - stats (private Statistics): Statistics object
+            - fileName (private String): file name
+            - numStudents (private int): number of students
 
         Methods:
             - Util() (public): default constructor
             - Util(String) (public): overloaded constructor
-            - setFName(String) (public): sets fName
-            - getFName() (public String): returns fName
-            - setStudents(Student[]) (public): sets students[]
-            - getStudents() (public Student[]): returns students[]
-            - setStats(Statistics) (public): sets stats
-            - getStats() (public Statistics): returns stats
+            - Setters/Getters for instance variables
             - readFile() (public): reads file and creates Student objects
-            - printStudents() (public): prints all students
-            - printStats() (public): prints stats
-            - printMenu() (public): prints menu
-            - printHeader() (public): prints header
-            - printFooter() (public): prints footer
-            - print() (public): prints all - header, menu, students, stats, footer
+            - print() (public): prints all instance variables
 
-	ScoreStatisticsDriver class:
+	ScoreStatisticsDriver class: Main class for program with user interface
 
         Variables:
-            - util (private Util): Util object
+            - fileParser: Util object
+            - lab2: Student array
+            - lab2Resized: Student array with no null values
+            - statLab2: Statistics object
 
         Methods:
-            - ScoreStatisticsDriver() (public): default constructor
-            - ScoreStatisticsDriver(String) (public): overloaded constructor
-            - setUtil(Util) (public): sets util
-            - getUtil() (public Util): returns util
-            - run() (public): runs program
+            - main(String[]): public static void main method
+            - printMenu(): prints menu
+            - getUserSelection(int validMin, int validMax): gets user selection
 
 
 Program design:
 
-
 	Input:
-
+        - Util class reads data from file
+        - ScoreStatisticsDriver class reads and validates user selection until user enters 5 to exit program
 
 	Processing:
+        - Util class creates Student objects and populates array
+        - ScoreStatisticsDriver class creates Statistics object and calls methods to find lowest, highest, and average scores
 	
+	Printing: All printing uses System.out.printf()
+        - ScoreStatisticsDriver class prints menu
+        - Statistics class has methods to prints selected statistics
+        - Each class has a print() method to print instance variables
+	
+PROGRAM TEST OUTPUT:
 
-	Printing:
-	
+    Select from the follwing options: 
+    1. Print high scores for each quiz 
+    2. Print low scores for each quiz 
+    3. Print average scores for each quiz 
+    4. Print all statistics for each quiz 
+    5. EXIT PROGRAM 
 
-	
-	
-***** PROGRAM OUTPUT *****
+    Enter your selection: 1
+    Low scores: 0 7 0 32 
+
+    Enter your selection: 2
+    High scores: 100 100 100 90 
+
+    Enter your selection: 3
+    Average scores: 46.20 42.33 70.47 75.67 
+
+    Enter your selection: 4
+    High scores: 100 100 100 90 
+    Low scores: 0 7 0 32 
+    Average scores: 46.20 42.33 70.47 75.67 
+
+    Enter your selection: four
+    Invalid selection. Please try again. 
+    Enter your selection: a
+    Invalid selection. Please try again. 
+    Enter your selection: abcd
+    Invalid selection. Please try again. 
+    Enter your selection: 1234
+    Invalid selection. Please try again. 
+    Enter your selection: -1
+    Invalid selection. Please try again. 
+    Enter your selection: 5
+
+    Exiting program... 

@@ -7,6 +7,8 @@ Due: 3/7/2023
 
 package studentscoreanalysis;
 
+import java.util.Arrays;
+
 /**
  * The Student class is used to store the student ID and the scores for 5 quizzes.
  * @author Alex Hagemeister
@@ -16,12 +18,51 @@ package studentscoreanalysis;
 public class Student {
 
     private int SID;
-    private int numScores;
-    private int scores[] = new int[numScores];
+    private int[] scores;
     
-    //write public get and set methods for
+    // Default constructor
+    public Student() {
+        SID = 0;
+        scores = null;
+    }
     
-    //SID and scores
-    
-    //add methods to print values of instance variables.
+    // Overloaded initialization constructor
+    public Student(int SID, int[] scores) {
+        this.SID = SID;
+        this.scores = scores;
+    }
+    public int getNumScores() {
+        if (scores != null) {
+            return scores.length;
+        } else {
+            return 0;
+        }
+    }
+    /**
+     * Get score at index
+     * @param index
+     * @return score at index
+     */
+    public int getScore(int index) {
+        return scores[index];
+    }
+
+    // Getters and setters
+    public int getSID() {
+        return SID;
+    }
+    public void setSID(int sID) {
+        SID = sID;
+    }
+    public int[] getScores() {
+        return scores;
+    }
+    public void setScores(int[] scores) {
+        this.scores = scores;
+    }
+    // print all instance variables
+    public void print() {
+        System.out.println("SID: " + SID);
+        System.out.println("Scores: " + Arrays.toString(scores));
+    }
 }

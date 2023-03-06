@@ -23,11 +23,11 @@ The subsequent lines contain the student ID number and the five quiz scores for 
 
 #### Student class: Blueprint for a student object.
 
-##### Variables:
+Variables:
 - SID (private int) student ID #
 - scores[] (private int[]) array of quiz scores
 
-##### Methods:
+Methods:
 - Student(): public default constructor
 - Student(int, int[]): public overloaded constructor
 - setSID(int): sets SID
@@ -37,12 +37,12 @@ The subsequent lines contain the student ID number and the five quiz scores for 
 
 #### Statistics class: Used to store the lowest, highest, and average scores for all quizzes
 
-##### Variables:
+Variables:
 - lowScores[] (private int[]): array of lowest scores
 - highScores[] (private int[]): array of highest scores
 - avgScores[] (private float[]): array of average scores
 
-##### Methods:
+Methods:
 - Statistics(): public default constructor
 - Statistics(Student[]): public overloaded constructor
 - findLow(Student[]) (public): finds lowest scores
@@ -57,11 +57,11 @@ The subsequent lines contain the student ID number and the five quiz scores for 
 
 #### Util class: Used to read file and populate array of Student objects
 
-##### Variables:
+Variables:
 - fileName (private String): file name
 - numStudents (private int): number of students
 
-##### Methods:
+Methods:
 - Util() (public): default constructor
 - Util(String) (public): overloaded constructor
 - Setters/Getters for instance variables
@@ -70,20 +70,20 @@ The subsequent lines contain the student ID number and the five quiz scores for 
 
 #### ScoreStatisticsDriver class: Main class for program with user interface
 
-##### Variables:
+Variables:
 - fileParser: Util object
 - lab2: Student array
 - lab2Resized: Student array with no null values
 - statLab2: Statistics object
 
-##### Methods:
+Methods:
 - main(String[]): public static void main method
 - printMenu(): prints menu
 - getUserSelection(int validMin, int validMax): gets user selection
 
 ---
 
-#### Program design:
+### Program design:
 
 Input:
 - Util class reads data from file
@@ -123,16 +123,16 @@ High scores: 100 100 100 90
 Low scores: 0 7 0 32 
 Average scores: 46.20 42.33 70.47 75.67 
 
-Enter your selection: four
-Invalid selection. Please try again. 
-Enter your selection: a
-Invalid selection. Please try again. 
-Enter your selection: abcd
-Invalid selection. Please try again. 
-Enter your selection: 1234
-Invalid selection. Please try again. 
-Enter your selection: -1
-Invalid selection. Please try again. 
-Enter your selection: 5
+Enter your selection: four  
+Invalid selection. Please try again.  
+Enter your selection: a  
+Invalid selection. Please try again.  
+Enter your selection: abcd  
+Invalid selection. Please try again.   
+Enter your selection: 1234  
+Invalid selection. Please try again.   
+Enter your selection: -1  
+Invalid selection. Please try again.   
+Enter your selection: 5  
 
 Exiting program... 

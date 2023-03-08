@@ -29,7 +29,7 @@ public class Driver {
 		FileIO fileParser = new FileIO();						// Create a Util object to read the file
 
 		// Set the file name
-		String fileName = "/Users/alexhagemeister/Java/JavaProjects/Lab5_StudentScoreAnalysis/src/TestScores.txt";
+		String fileName = "/Users/alexhagemeister/Java/JavaProjects/Lab5_StudentScoreAnalysis/15_records_with_header.txt";
 
 		// Read the file by passing to the Util objects readFile method, which updates the lab2 array
 		fileParser.readFile(fileName, lab2);

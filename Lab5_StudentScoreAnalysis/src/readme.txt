@@ -94,6 +94,14 @@ Program design:
         - ScoreStatisticsDriver class prints menu
         - Statistics class has methods to prints selected statistics
         - Each class has a print() method to print instance variables
+
+    TEST CASES: 
+
+        1. empty file with header
+        2. 1 record with header
+        3. 15 records with header
+        4. 40 records with header 
+        5. 42 records with header - ignore the last two rows.
 	
 PROGRAM TEST OUTPUT:
 

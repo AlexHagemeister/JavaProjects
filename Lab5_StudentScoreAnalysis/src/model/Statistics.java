@@ -30,17 +30,26 @@ public class Statistics {
     // Overloaded initialization constructor
     public Statistics(Student[] studentArray) {
         // get number of quizzes
-        int numQuizzes = studentArray[0].getNumScores();
+        if (studentArray[0] != null) {
+            int numQuizzes = studentArray[0].getNumScores();
 
-        // initialize arrays
-        lowScores = new int[numQuizzes];
-        highScores = new int[numQuizzes];
-        avgScores = new float[numQuizzes];
+            // initialize arrays
+            lowScores = new int[numQuizzes];
+            highScores = new int[numQuizzes];
+            avgScores = new float[numQuizzes];
 
-        // find low, high, and average scores
-        findLow(studentArray);
-        findHigh(studentArray);
-        findAvg(studentArray);
+            // find low, high, and average scores
+            findLow(studentArray);
+            findHigh(studentArray);
+            findAvg(studentArray);
+        }
+        else {
+            System.out.printf("%n%nStudent array is empty. %n");
+            // initialize arrays to 0
+            lowScores = new int[0];
+            highScores = new int[0];
+            avgScores = new float[0];
+        }
     }
     /**
      * Finds the lowest scores for each quiz and stores them in the lowScores array.
@@ -54,15 +63,17 @@ public class Statistics {
         // Loop through each student
         for(int student = 0; student < studentArray.length; student++) {
 
-            // Loop through each quiz
-            for(int quizNumber = 0; quizNumber < studentArray[student].getNumScores(); quizNumber++) {
+            if (studentArray[student] != null) {
+                // Loop through each quiz
+                for(int quizNumber = 0; quizNumber < studentArray[student].getNumScores(); quizNumber++) {
 
-                // Get the current score
-                int score = studentArray[student].getScore(quizNumber);
+                    // Get the current score
+                    int score = studentArray[student].getScore(quizNumber);
 
-                // If the current score is lower than the current low score, update the low score
-                if(score < lowScores[quizNumber]) {
-                    lowScores[quizNumber] = score;
+                    // If the current score is lower than the current low score, update the low score
+                    if(score < lowScores[quizNumber]) {
+                        lowScores[quizNumber] = score;
+                    }
                 }
             }
         }
@@ -79,15 +90,17 @@ public class Statistics {
         // Loop through each student
         for(int student = 0; student < studentArray.length; student++) {
 
-            // Loop through each quiz
-            for(int quizNumber = 0; quizNumber < studentArray[student].getNumScores(); quizNumber++) {
+            if (studentArray[student] != null) {
+                // Loop through each quiz
+                for(int quizNumber = 0; quizNumber < studentArray[student].getNumScores(); quizNumber++) {
 
-                // Get the current score
-                int score = studentArray[student].getScore(quizNumber);
+                    // Get the current score
+                    int score = studentArray[student].getScore(quizNumber);
 
-                // If the current score is higher than the current high score, update the high score
-                if(score > highScores[quizNumber]) {
-                    highScores[quizNumber] = score;
+                    // If the current score is higher than the current high score, update the high score
+                    if(score > highScores[quizNumber]) {
+                        highScores[quizNumber] = score;
+                    }
                 }
             }
         }
@@ -102,23 +115,29 @@ public class Statistics {
         // Initialize avgScores to 0
         Arrays.fill(avgScores, 0);
 
+        int numStudents = 0;
+
         // Loop through each student
         for(int student = 0; student < studentArray.length; student++) {
 
-            // Loop through each quiz
-            for(int quizNumber = 0; quizNumber < studentArray[student].getNumScores(); quizNumber++) {
+            if (studentArray[student] != null) {
+                // Loop through each quiz
+                for(int quizNumber = 0; quizNumber < studentArray[student].getNumScores(); quizNumber++) {
 
-                // Get the current score
-                int score = studentArray[student].getScore(quizNumber);
+                    // Get the current score
+                    int score = studentArray[student].getScore(quizNumber);
 
-                // Add the current score to the average score
-                avgScores[quizNumber] += score;
+                    // Add the current score to the average score
+                    avgScores[quizNumber] += score;
+                }
+                numStudents++;
             }
         }
-
-        // Divide the sum of the scores by the number of students to get the average
-        for(int quizNumber = 0; quizNumber < avgScores.length; quizNumber++) {
-            avgScores[quizNumber] /= studentArray.length;
+        if (studentArray.length > 0) {
+            // Divide the sum of the scores by the number of students to get the average
+            for(int quizNumber = 0; quizNumber < avgScores.length; quizNumber++) {
+                avgScores[quizNumber] /= numStudents;
+            }
         }
     }
 

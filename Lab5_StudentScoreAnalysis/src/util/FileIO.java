@@ -10,7 +10,6 @@ package util;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 import model.Student;
@@ -24,17 +23,15 @@ import model.Student;
 public class FileIO {
 
     private String fileName;   // file name
-    int numStudents;
 
     // Default constructor
     public FileIO() {
         fileName = null;
-        numStudents = 0;
     }
 
  /**
  * Reads the file contents and builds the array with populated student objects.
- * @param fileName name of the file to read
+ * @param fileName name of the last file read
  * @param studentArray array of student objects
  */
 public void readFile(String fileName, Student[] studentArray) {
@@ -50,15 +47,21 @@ public void readFile(String fileName, Student[] studentArray) {
             int arrayPos = 0;       // position in array
 
             // Read file line by line
-            while((line = reader.readLine()) != null) {
+            while((line = reader.readLine()) != null && arrayPos < studentArray.length) {
 
                 // Tokenize the line
                 StringTokenizer tokenizer = new StringTokenizer(line, " ");
 
-                // If header line, save it
-                if (header == null) {
+                // If header line, save it and move to next line
+                if ("Stud Qu1 Qu2 Qu3 Qu4 Qu5".equals(line)) {
                     header = line;
-                
+                    continue;
+
+                // If blank line, move to next line
+                } else if ("".equals(line)) {
+                    System.out.printf("%n%n%nBlank line found in file: %s %n", fileName);
+                    continue;
+
                 // Else, create a student object and add it to the array
                 } else {
                     // Get the student ID
@@ -76,20 +79,13 @@ public void readFile(String fileName, Student[] studentArray) {
                     arrayPos++;
                 }
             }
-            // Save the number of students
-            numStudents = arrayPos;
         } catch (IOException e) {
-            System.out.printf("Error reading file: %s", e.toString());
+            // System.out.printf("Error reading file: %s", e.toString());
+            System.out.printf("Error reading file: %s %n", fileName);
         } 
     }
 
     // Setters and getters
-    public int getNumStudents() {
-        return numStudents;
-    }
-    public void setNumStudents(int numStudents) {
-        this.numStudents = numStudents;
-    }
     public String getFileName() {
         return fileName;
     }
@@ -99,7 +95,6 @@ public void readFile(String fileName, Student[] studentArray) {
 
     // Print all instance variables
     public void print() {
-        System.out.printf("File name: %s", fileName);
-        System.out.printf("numStudents: %d", numStudents);
+        System.out.printf("Current file: %s", fileName);
     }
 }

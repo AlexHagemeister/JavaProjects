@@ -25,54 +25,76 @@ public class Driver {
 	public static void main(String[] args) {
 
 		int defaultNumStudents = 40;						// Set default array size to avoid magic numbers
-		Student[] lab2 = new Student[defaultNumStudents]; 	// Create an array of Student objects
-		FileIO fileParser = new FileIO();						// Create a Util object to read the file
+		FileIO fileParser = new FileIO();					// Create a Util object to read the file
 
-		// Set the file name
-		String fileName = "/Users/alexhagemeister/Java/JavaProjects/Lab5_StudentScoreAnalysis/15_records_with_header.txt";
+		// ------------------------------------ //
+		// TEST CASE 1: 15 records with header	//
+		// ------------------------------------ //
 
-		// Read the file by passing to the Util objects readFile method, which updates the lab2 array
-		fileParser.readFile(fileName, lab2);
+		Student[] lab1 = new Student[defaultNumStudents]; 	// Create an array of Student objects
 
-		// Create a new array of the correct size
-		Student[] lab2Resized = new Student[fileParser.getNumStudents()];
+		// Read the file by passing to the Util objects readFile method, which updates the lab1 array
+		fileParser.readFile("15_records_with_header.txt", lab1);
 
-		// Copy the data from the old array to the new array
-		for (int student = 0; student < lab2Resized.length; student++) {
-			lab2Resized[student] = lab2[student];
-		}
+		fileParser.print();								// Print the file name
+		Statistics statLab1 = new Statistics(lab1);		// Create a Statistics object 
+		runAnalytics(statLab1);							// Run the analytics
+		System.out.printf("%n*** END TEST CASE 1 ***%n%n");
+		
+		// // --------------------------------- //
+		// // TEST CASE 2: 1 record with header //
+		// // --------------------------------- //
 
-		// Create a Statistics object to analyze the data
-		Statistics statLab2 = new Statistics(lab2Resized);
+		Student[] lab2 = new Student[defaultNumStudents];
+		fileParser.readFile("1_record_with_header.txt", lab2);
+		fileParser.print();
+		Statistics statLab2 = new Statistics(lab2);
+		runAnalytics(statLab2);	
+		System.out.printf("%n*** END TEST CASE 2 ***%n%n");
 
-		printMenu(); 	// Print the menu
+		// ----------------------------------- //
+		// TEST CASE 3: empty file with header //
+		// ----------------------------------- //
 
-		// Set the valid range for user input to avoid magic numbers
-		int validMin = 1;
-		int validMax = 5;
+		Student[] lab3 = new Student[defaultNumStudents];
+		fileParser.readFile("empty_with_header.txt", lab3);
+		fileParser.print();
+		Statistics statLab3 = new Statistics(lab3);
+		runAnalytics(statLab3);	
+		System.out.printf("%n*** END TEST CASE 3 ***%n%n");
 
-		// Loop until user selects 5 to exit program
-		while (true) {
-			int userSelection = getUserSelection(validMin, validMax);
-			if (userSelection == 5) {
-				System.out.printf("%nExiting program... %n%n");
-				break;
-			}
-			else {
-				statLab2.printSelected(userSelection);
-				System.out.printf("%n");
-			}
-		}
+		// ----------------------------------- //
+		// TEST CASE 4: 40 records with header //
+		// ----------------------------------- //
+
+		Student[] lab4 = new Student[defaultNumStudents];
+		fileParser.readFile("40_records_with_header.txt", lab4);
+		fileParser.print();
+		Statistics statLab4 = new Statistics(lab4);
+		runAnalytics(statLab4);	
+		System.out.printf("%n*** END TEST CASE 4 ***%n%n");
+
+		// ----------------------------------- //
+		// TEST CASE 5: 42 records with header //
+		// ----------------------------------- //
+
+		Student[] lab5 = new Student[defaultNumStudents];
+		fileParser.readFile("42_records_with_header.txt", lab5);
+		fileParser.print();
+		Statistics statLab5 = new Statistics(lab5);
+		runAnalytics(statLab5);	
+		System.out.printf("%n*** END TEST CASE 5 ***%n%n");
+
 	}
 	
 	// Prints the menu
 	public static void printMenu() {
-		System.out.printf("%nSelect from the follwing options: %n");
+		System.out.printf("%n%nSelect from the follwing options: %n");
 		System.out.printf("1. Print high scores for each quiz %n");
 		System.out.printf("2. Print low scores for each quiz %n");
 		System.out.printf("3. Print average scores for each quiz %n");
 		System.out.printf("4. Print all statistics for each quiz %n");
-		System.out.printf("5. EXIT PROGRAM %n%n");
+		System.out.printf("5. EXIT ANALYTICS %n%n");
 	}
 
 	/**
@@ -98,6 +120,26 @@ public class Driver {
 				}
 			} catch (NumberFormatException e) {
 				System.out.printf("Invalid selection. Please try again. %n");
+			}
+		}
+	}
+	public static void runAnalytics(Statistics statLab) {
+		printMenu(); 	// Print the menu
+
+		// Set the valid range for user input to avoid magic numbers
+		int validMin = 1;
+		int validMax = 5;
+
+		// Loop until user selects 5 to exit program
+		while (true) {
+			int userSelection = getUserSelection(validMin, validMax);
+			if (userSelection == 5) {
+				System.out.printf("%nExiting analytics for file... %n%n");
+				break;
+			}
+			else {
+				statLab.printSelected(userSelection);
+				System.out.printf("%n");
 			}
 		}
 	}

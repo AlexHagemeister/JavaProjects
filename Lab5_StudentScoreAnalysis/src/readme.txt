@@ -10,11 +10,19 @@ Program Description:
     Performs statistical analysis of scores for a class of students (up to 40 students) from a .txt file,
     displaying all scores, along with the high, low, and average scores. 
 
-Data: TestScores.txt
+Data: 
 
     There are five quizzes during the term, and each student is identified by a four-digit student ID number.
-    The first line contains the column identifiers: Stud Qu1 Qu2 Qu3 Qu4 Qu5
+    The first line may or may not contain the column identifiers: Stud Qu1 Qu2 Qu3 Qu4 Qu5
     The subsequent lines contain the student ID number and the five quiz scores for that student, separated by spaces.
+
+    TEST CASES: 
+
+        1. 15 records with header
+        2. 1 record with header
+        3. empty file with header
+        4. 40 records with header 
+        5. 42 records with header - ignore the last two rows.
 
  
 Program specs:
@@ -57,7 +65,6 @@ Program specs:
 
         Variables:
             - fileName (private String): file name
-            - numStudents (private int): number of students
 
         Methods:
             - Util() (public): default constructor
@@ -95,47 +102,165 @@ Program design:
         - Statistics class has methods to prints selected statistics
         - Each class has a print() method to print instance variables
 
-    TEST CASES: 
 
-        1. empty file with header
-        2. 1 record with header
-        3. 15 records with header
-        4. 40 records with header 
-        5. 42 records with header - ignore the last two rows.
 	
 PROGRAM TEST OUTPUT:
 
-    Select from the follwing options: 
-    1. Print high scores for each quiz 
-    2. Print low scores for each quiz 
-    3. Print average scores for each quiz 
-    4. Print all statistics for each quiz 
-    5. EXIT PROGRAM 
+    Current file: 15_records_with_header.txt
 
-    Enter your selection: 1
-    Low scores: 0 7 0 32 
+Select from the follwing options: 
+1. Print high scores for each quiz 
+2. Print low scores for each quiz 
+3. Print average scores for each quiz 
+4. Print all statistics for each quiz 
+5. EXIT ANALYTICS 
 
-    Enter your selection: 2
-    High scores: 100 100 100 90 
+Enter your selection: one
+Invalid selection. Please try again. 
+Enter your selection: -1
+Invalid selection. Please try again. 
+Enter your selection: 10
+Invalid selection. Please try again. 
+Enter your selection: 1
+Low scores: 0 7 0 32 
 
-    Enter your selection: 3
-    Average scores: 46.20 42.33 70.47 75.67 
+Enter your selection: 2
+High scores: 100 100 100 90 
 
-    Enter your selection: 4
-    High scores: 100 100 100 90 
-    Low scores: 0 7 0 32 
-    Average scores: 46.20 42.33 70.47 75.67 
+Enter your selection: 3
+Average scores: 46.20 42.33 70.47 75.67 
 
-    Enter your selection: four
-    Invalid selection. Please try again. 
-    Enter your selection: a
-    Invalid selection. Please try again. 
-    Enter your selection: abcd
-    Invalid selection. Please try again. 
-    Enter your selection: 1234
-    Invalid selection. Please try again. 
-    Enter your selection: -1
-    Invalid selection. Please try again. 
-    Enter your selection: 5
+Enter your selection: 4
+High scores: 100 100 100 90 
+Low scores: 0 7 0 32 
+Average scores: 46.20 42.33 70.47 75.67 
 
-    Exiting program... 
+Enter your selection: 5
+
+Exiting analytics for file... 
+
+
+*** END TEST CASE 1 ***
+
+Current file: 1_record_with_header.txt
+
+Select from the follwing options: 
+1. Print high scores for each quiz 
+2. Print low scores for each quiz 
+3. Print average scores for each quiz 
+4. Print all statistics for each quiz 
+5. EXIT ANALYTICS 
+
+Enter your selection: 1
+Low scores: 95 1 99 78 
+
+Enter your selection: 2
+High scores: 95 1 99 78 
+
+Enter your selection: 3
+Average scores: 95.00 1.00 99.00 78.00 
+
+Enter your selection: 4
+High scores: 95 1 99 78 
+Low scores: 95 1 99 78 
+Average scores: 95.00 1.00 99.00 78.00 
+
+Enter your selection: 5
+
+Exiting analytics for file... 
+
+
+*** END TEST CASE 2 ***
+
+Current file: empty_with_header.txt
+
+Student array is empty. 
+
+
+Select from the follwing options: 
+1. Print high scores for each quiz 
+2. Print low scores for each quiz 
+3. Print average scores for each quiz 
+4. Print all statistics for each quiz 
+5. EXIT ANALYTICS 
+
+Enter your selection: 1
+Low scores: 
+
+Enter your selection: 2
+High scores: 
+
+Enter your selection: 3
+Average scores: 
+
+Enter your selection: 4
+High scores: 
+Low scores: 
+Average scores: 
+
+Enter your selection: 5
+
+Exiting analytics for file... 
+
+
+*** END TEST CASE 3 ***
+
+Current file: 40_records_with_header.txt
+
+Select from the follwing options: 
+1. Print high scores for each quiz 
+2. Print low scores for each quiz 
+3. Print average scores for each quiz 
+4. Print all statistics for each quiz 
+5. EXIT ANALYTICS 
+
+Enter your selection: 1
+Low scores: 0 1 0 32 
+
+Enter your selection: 2
+High scores: 100 100 100 100 
+
+Enter your selection: 3
+Average scores: 47.60 42.30 69.78 76.80 
+
+Enter your selection: 4
+High scores: 100 100 100 100 
+Low scores: 0 1 0 32 
+Average scores: 47.60 42.30 69.78 76.80 
+
+Enter your selection: 5
+
+Exiting analytics for file... 
+
+
+*** END TEST CASE 4 ***
+
+Current file: 42_records_with_header.txt
+
+Select from the follwing options: 
+1. Print high scores for each quiz 
+2. Print low scores for each quiz 
+3. Print average scores for each quiz 
+4. Print all statistics for each quiz 
+5. EXIT ANALYTICS 
+
+Enter your selection: 1
+Low scores: 0 1 0 32 
+
+Enter your selection: 2
+High scores: 100 100 100 100 
+
+Enter your selection: 3
+Average scores: 47.60 42.30 69.78 76.80 
+
+Enter your selection: 4
+High scores: 100 100 100 100 
+Low scores: 0 1 0 32 
+Average scores: 47.60 42.30 69.78 76.80 
+
+Enter your selection: 5
+
+Exiting analytics for file... 
+
+
+*** END TEST CASE 5 ***

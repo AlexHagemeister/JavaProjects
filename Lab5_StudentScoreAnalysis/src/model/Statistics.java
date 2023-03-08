@@ -5,7 +5,7 @@ Lab 5: Student Score Analysis
 Due: 3/7/2023 
 */
 
-package studentscoreanalysis;
+package model;
 
 import java.util.Arrays;
 

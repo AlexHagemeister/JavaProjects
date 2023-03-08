@@ -1,3 +1,4 @@
+package model;
 		// int validMin = 1;
 		// int validMax = 5;
 

@@ -5,7 +5,7 @@ Lab 5: Student Score Analysis
 Due: 3/7/2023 
 */
 
-package studentscoreanalysis;
+package util;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,19 +13,21 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+import model.Student;
+
 /**
  * The Statistics class is used to store the lowest, highest, and average scores for 5 quizzes.
  * @author Alex Hagemeister
  * @version 1.0
  * @since March 7, 2023
  */
-public class Util {
+public class FileIO {
 
     private String fileName;   // file name
     int numStudents;
 
     // Default constructor
-    public Util() {
+    public FileIO() {
         fileName = null;
         numStudents = 0;
     }

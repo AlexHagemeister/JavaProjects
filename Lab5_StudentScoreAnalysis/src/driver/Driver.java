@@ -5,7 +5,13 @@ Lab 5: Student Score Analysis
 Due: 3/7/2023 
 */
 
-package studentscoreanalysis;
+package driver;
+
+import java.util.Scanner;
+
+import model.Statistics;
+import model.Student;
+import util.FileIO;
 
 /**
  * The Statistics class is used to store the lowest, highest, and average scores
@@ -15,12 +21,12 @@ package studentscoreanalysis;
  * @version 1.0
  * @since March 7, 2023
  */
-public class ScoreStatisticsDriver {
+public class Driver {
 	public static void main(String[] args) {
 
 		int defaultNumStudents = 40;						// Set default array size to avoid magic numbers
 		Student[] lab2 = new Student[defaultNumStudents]; 	// Create an array of Student objects
-		Util fileParser = new Util();						// Create a Util object to read the file
+		FileIO fileParser = new FileIO();						// Create a Util object to read the file
 
 		// Set the file name
 		String fileName = "/Users/alexhagemeister/Java/JavaProjects/Lab5_StudentScoreAnalysis/src/TestScores.txt";
@@ -80,8 +86,10 @@ public class ScoreStatisticsDriver {
 		while (true) {	// Loop until user enters valid selection
 			try {
 				System.out.printf("Enter your selection: ");
-				// Read user input and try to parse to int
-				int userSelection = Integer.parseInt(System.console().readLine());
+				// Read user input using a scanner object and try to parse to int
+				Scanner scanner = new Scanner(System.in);
+
+				int userSelection = Integer.parseInt(scanner.nextLine());
 				// Check if user selection is valid
 				if (userSelection >= validMin && userSelection <= validMax) {
 					return userSelection;
